@@ -10,8 +10,12 @@ dotenv.config();
 connectToDB();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "https://resu-me-up-website.vercel.app/",
+    credentials: true
+}));
 app.use(express.json());
+app.options(/.*/, cors());
 
 app.get('/', (req,res)=> res.send("Resume Builder API is running... "));
 
