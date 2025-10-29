@@ -1,0 +1,114 @@
+.form-box{
+  background-image: url(../assets/form-bg.jpg) ;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  
+}
+
+.form-box::before{
+  content: "";
+  inset: 0;
+  background-color: #1313139e;
+  position: absolute;
+}
+
+/* ---------- AUTH CONTAINER ---------- */
+.auth-container {
+  max-width: 420px;
+  margin: auto;
+  position: relative;
+  top: 6rem;
+  padding: 0 10rem ;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(13, 27, 42, 0.1);
+  text-align: center;
+  font-family: "Century Gothic", sans-serif;
+}
+
+.auth-container h2 {
+  font-size: 1.8rem;
+  color: #0d1b2a;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: #6c757d;
+  margin-bottom: 1.8rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- INPUTS ---------- */
+.auth-container input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin: 0.6rem 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #f2542d;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(242, 84, 45, 0.3);
+}
+
+/* ---------- BUTTON ---------- */
+.auth-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #f2542d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #9c1c02;
+  transform: translateY(-2px);
+}
+
+/* ---------- FOOTER ---------- */
+.form-footer {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #0d1b2a;
+}
+
+.form-footer a {
+  color: #f2542d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .auth-container {
+    width: 90%;
+    padding: 1.8rem;
+  }
+
+  .auth-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-btn {
+    font-size: 0.95rem;
+  }
+}

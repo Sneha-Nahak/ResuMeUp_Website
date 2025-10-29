@@ -1,0 +1,238 @@
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: transparent !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-position: center;
+}
+
+.navbar-dashboard::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 100%; 
+  z-index: -1;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.navbar-dashboard::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    z-index: -1; 
+    
+    background: linear-gradient(
+        to bottom,
+        rgba(191, 191, 191, 0.342), 
+        rgba(0, 0, 0, 0)      
+    );
+}
+
+.navbar-logo a {
+  color: #ef5728;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Century Gothic", sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-logo a:hover {
+  color: #e0e1dd;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-links li a {
+  color: #e0e1dd;
+  text-decoration: none;
+  font-size: 1rem;
+  
+  font-family: "Century Gothic", sans-serif;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-links li a:hover {
+  color: #f2542d;
+  transform: translateY(-2px);
+}
+
+.navbar-links .mobile-only {
+    display: none;
+}
+
+/* --- DROPDOWN STYLES (DESKTOP HOVER) --- */
+
+.navbar-dropdown-container {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: -1rem; 
+    list-style: none;
+    padding: 0.5rem 0;
+    margin-top: 5px;
+    min-width: 150px;
+    background-color: #25303b; 
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1010;
+}
+
+.navbar-dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+    display: block;
+    white-space: nowrap;
+    color: #e0e1dd;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #1c2630; 
+    color: #f2542d;
+    transform: none;
+}
+
+/* --- END DROPDOWN STYLES --- */
+
+.register-btn {
+  width: 45% !important;
+  background-color: #f2542d;
+  color: #fff !important;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #f76b45;
+  transform: scale(1.05);
+}
+
+.logout-btn {
+  background: #f2542d;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Century Gothic", sans-serif;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #9c1c02;
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  display: none;
+  color: #f2542d;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-logo a {
+    font-size: 1.5rem;
+  }
+  .menu-icon {
+    font-size: 1.5rem;
+    display: block;
+    z-index: 1100;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: #25303b;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    width: 50%;
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    min-width: 250px;
+  }
+  
+  .navbar-links li {
+      width: 100%; 
+      display: flex;
+      justify-content: center;
+  }
+
+  .navbar-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navbar-links li a {
+    font-size: 1.1rem;
+    width: 100%; 
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .logout-btn,
+  .register-btn {
+    width: 50%;
+    text-align: center;
+  }
+
+  .navbar-links .mobile-only {
+    display: flex; 
+  }
+
+  .navbar-links .desktop-only {
+    display: none;
+  }
+}

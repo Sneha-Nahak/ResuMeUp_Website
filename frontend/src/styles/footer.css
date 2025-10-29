@@ -1,0 +1,141 @@
+/* Main Footer Container */
+.main-footer {
+    background-color: #0d1b2a; /* Dark background to match dashboard/navbar */
+    color: #e0e1dd;
+    padding: 3rem 1.5rem 1rem;
+    font-family: "Century Gothic", sans-serif;
+    border-top: 5px solid #1c2e40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content Grid for Sections */
+.footer-content {
+    width: 100%;
+    margin: 0 2rem ;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content:space-evenly;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #1c2e40;
+}
+
+/* Individual Footer Section Styling */
+.footer-section h4 {
+    color: #f2542d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid rgba(242, 84, 45, 0.3);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* List/Link Styling */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+    color: #e0e1dd;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f2542d;
+    text-decoration: underline;
+}
+
+/* Brand Info Section */
+.footer-logo {
+    color: #ef5728;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.social-links a {
+    color: #e0e1dd;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #f2542d;
+    transform: translateY(-2px);
+}
+
+/* Copyright Bottom Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 685px) {
+    .footer-content {
+        grid-template-columns: 1fr ; 
+        justify-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .brand-info {
+        grid-column: 1 / -1; 
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Stacked columns on mobile */
+        text-align: center;
+    }
+    
+    .footer-section h4 {
+        margin: 0 auto 1.2rem;
+    }
+    
+    .footer-section ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
