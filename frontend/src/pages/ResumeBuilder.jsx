@@ -361,7 +361,7 @@ const ResumeBuilder = () => {
             {experience.map((exp, i) => (
               <li key={i} style={{ marginBottom: '15px' }}>
                 
-                {/* Job Title/Company/Duration (Outer block) */}
+                {/* Job Title/Company/Duration (The single bullet point) */}
                 <strong> {exp.company || "Company"} </strong> – {exp.position || "Position"} ({exp.duration || "Duration"})
                 
                 {/* Description (Inner Bulleted List) */}
@@ -391,17 +391,14 @@ const ResumeBuilder = () => {
           </ul>
         </section>
 
-        {/* --- CORRECTED PROJECTS SECTION --- */}
         <section>
           <h3>Projects</h3>
           <ul>
             {projects.map((proj, i) => (
               <li key={i} style={{ marginBottom: '15px' }}>
                 
-                {/* Project Title */}
                 <strong>{proj.title || "Project Title"}</strong> 
                 
-                {/* Link Line */}
                 <p style={{ margin: '5px 0 5px', fontSize: '0.9em' }}>
                   {proj.githubLink && (
                     <a href={proj.githubLink} target="_blank" rel="noreferrer"> <strong>GitHub</strong></a>
