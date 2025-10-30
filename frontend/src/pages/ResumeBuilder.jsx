@@ -197,12 +197,12 @@ const ResumeBuilder = () => {
               onChange={(e) => setPersonalInfo({ ...personalInfo, address: e.target.value })} 
           />
           <input 
-              placeholder="LinkedIn ID/User Name" 
+              placeholder="LinkedIn Link" 
               value={personalInfo.linkedinLink || ''} 
               onChange={(e) => setPersonalInfo({ ...personalInfo, linkedinLink: e.target.value })} 
           />
           <input 
-              placeholder="GitHub ID/User Name" 
+              placeholder="GitHub Link" 
               value={personalInfo.githubLink || ''} 
               onChange={(e) => setPersonalInfo({ ...personalInfo, githubLink: e.target.value })} 
           />
@@ -315,22 +315,22 @@ const ResumeBuilder = () => {
             {(personalInfo.githubLink && (personalInfo.email || personalInfo.phone)) && " | "}
             {personalInfo.githubLink && 
                 <a 
-                    href={`https://github.com/${personalInfo.githubLink}`} 
+                    href={`${personalInfo.githubLink}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    {`Github: https://github.com/${personalInfo.githubLink}`}
+                    {`Github:${personalInfo.githubLink}`}
                 </a>
             }
 
             {(personalInfo.linkedinLink && (personalInfo.email || personalInfo.phone || personalInfo.githubLink)) && " | "}
             {personalInfo.linkedinLink && 
                 <a 
-                    href={`https://linkedin.com/in/${personalInfo.linkedinLink}`} 
+                    href={`${personalInfo.linkedinLink}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    {`Linkedin: https://linkedin.com/in/${personalInfo.linkedinLink}`}
+                    {`Linkedin:${personalInfo.linkedinLink}`}
                 </a>
             }
         </p>
