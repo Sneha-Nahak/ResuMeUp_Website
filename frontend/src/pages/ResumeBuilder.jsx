@@ -197,12 +197,12 @@ const ResumeBuilder = () => {
               onChange={(e) => setPersonalInfo({ ...personalInfo, address: e.target.value })} 
           />
           <input 
-              placeholder="LinkedIn Link" 
+              placeholder="LinkedIn ID/User Name" 
               value={personalInfo.linkedinLink || ''} 
               onChange={(e) => setPersonalInfo({ ...personalInfo, linkedinLink: e.target.value })} 
           />
           <input 
-              placeholder="GitHub Link" 
+              placeholder="GitHub ID/User Name" 
               value={personalInfo.githubLink || ''} 
               onChange={(e) => setPersonalInfo({ ...personalInfo, githubLink: e.target.value })} 
           />
