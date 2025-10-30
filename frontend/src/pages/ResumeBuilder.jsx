@@ -354,19 +354,25 @@ const ResumeBuilder = () => {
           </ul>
         </section>
 
+        {/* --- START OF CORRECTED EXPERIENCE SECTION --- */}
         <section>
           <h3>Experience</h3>
           <ul>
             {experience.map((exp, i) => (
-              <li key={i}>
+              <li key={i} style={{ marginBottom: '15px' }}>
+                
+                {/* Job Title/Company/Duration (Outer block) */}
                 <strong> {exp.company || "Company"} </strong> – {exp.position || "Position"} ({exp.duration || "Duration"})
-                <br />
+                
+                {/* Description (Inner Bulleted List) */}
                 {exp.description && (
-                  <ul style={{ paddingLeft: '20px' }}>
+                  <ul style={{ paddingLeft: '20px', marginTop: '5px' }}>
                     {exp.description.split('\n').map((line, lineIndex) => (
-                      <li key={lineIndex} style={{ listStyleType: 'disc' }}>
-                        {line.trim()} 
-                      </li>
+                      line.trim() && ( // Only render non-empty lines
+                        <li key={lineIndex} style={{ listStyleType: 'disc' }}>
+                          {line.trim()} 
+                        </li>
+                      )
                     ))}
                   </ul>
                 )}
@@ -374,6 +380,7 @@ const ResumeBuilder = () => {
             ))}
           </ul>
         </section>
+        {/* --- END OF CORRECTED EXPERIENCE SECTION --- */}
 
         <section>
           <h3>Skills</h3>
@@ -384,35 +391,45 @@ const ResumeBuilder = () => {
           </ul>
         </section>
 
+        {/* --- CORRECTED PROJECTS SECTION --- */}
         <section>
           <h3>Projects</h3>
           <ul>
             {projects.map((proj, i) => (
-              <li key={i}>
-                <strong>{proj.title || "Project Title"}</strong><br />
+              <li key={i} style={{ marginBottom: '15px' }}>
+                
+                {/* Project Title */}
+                <strong>{proj.title || "Project Title"}</strong> 
+                
+                {/* Link Line */}
+                <p style={{ margin: '5px 0 5px', fontSize: '0.9em' }}>
+                  {proj.githubLink && (
+                    <a href={proj.githubLink} target="_blank" rel="noreferrer"> <strong>GitHub</strong></a>
+                  )}
+                  {proj.liveLink && (
+                    <>
+                      {" | "}
+                      <a href={proj.liveLink} target="_blank" rel="noreferrer"> <strong>Live</strong></a>
+                    </>
+                  )}
+                  {proj.otherLink && (
+                    <>
+                      {" | "}
+                      <a href={proj.otherLink} target="_blank" rel="noreferrer"> <strong>Other</strong> </a>
+                    </>
+                  )}
+                </p>
+                
                 {proj.description && (
-                  <ul style={{ paddingLeft: '20px' }}>
+                  <ul style={{ paddingLeft: '20px', marginTop: '5px' }}>
                     {proj.description.split('\n').map((line, lineIndex) => (
-                      <li key={lineIndex} style={{ listStyleType: 'disc' }}>
-                        {line.trim()} 
-                      </li>
+                      line.trim() && ( // Only render non-empty lines
+                        <li key={lineIndex} style={{ listStyleType: 'disc' }}>
+                          {line.trim()} 
+                        </li>
+                      )
                     ))}
                   </ul>
-                )}
-                {proj.githubLink && (
-                  <a href={proj.githubLink} target="_blank" rel="noreferrer"> <strong> GitHub</strong></a>
-                )}
-                {proj.liveLink && (
-                  <>
-                    {" | "}
-                    <a href={proj.liveLink} target="_blank" rel="noreferrer"> <strong>Live</strong></a>
-                  </>
-                )}
-                {proj.otherLink && (
-                  <>
-                    {" | "}
-                    <a href={proj.otherLink} target="_blank" rel="noreferrer"> <strong>Other</strong> </a>
-                  </>
                 )}
               </li>
             ))}
