@@ -319,7 +319,7 @@ const ResumeBuilder = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    {`Github: ${personalInfo.githubLink}`}
+                    {`Github: https://github.com/${personalInfo.githubLink}`}
                 </a>
             }
 
@@ -330,7 +330,7 @@ const ResumeBuilder = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    {`Linkedin: ${personalInfo.linkedinLink}`}
+                    {`Linkedin: https://linkedin.com/in/${personalInfo.linkedinLink}`}
                 </a>
             }
         </p>
